@@ -1,0 +1,26 @@
+{
+  "name": "node-npm-yarn",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:dist": "live-server dist --port=8080 --no-browser",
+    "copy": "copyfiles --up 1 \"src/**/*.{html,css,js}\" dist",
+    "watch:copy": "onchange \"src/**/*\" -- npm run copy",
+    "start:dev": "npm run copy && concurrently \"npm run watch:copy\" \"npm run serve:dist\"",
+    "release": "npm version patch --no-git-tag-version && git add package.json && git commit -m \"release v$(node -p \"require('./package.json').version\")\" && git push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "copyfiles": "^2.4.1",
+    "live-server": "^1.2.2",
+    "onchange": "^7.1.0"
+  }
+}
