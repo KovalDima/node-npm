@@ -1,6 +1,6 @@
 {
   "name": "node-npm-yarn",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.20",
     "concurrently": "^9.2.1",
     "copyfiles": "^2.4.1",
     "live-server": "^1.2.2",
